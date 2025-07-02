@@ -32,6 +32,14 @@ export default function Footer() {
             </Link>
           </div>
         </div>
+        <div className={styles.message}>
+          <p className={styles.messageText}>
+            <span className={styles.messageHighlight}>人と人との繋がり</span>を<br />これからも大切に。
+          </p>
+        </div>
+        <div className={styles.copyright}>
+          <small className={styles.copyrightText}>&copy;2025 Nishida Haruka</small>
+        </div>
       </div>
     </footer>
   );

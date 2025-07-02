@@ -8,7 +8,7 @@ $mq-breakpoints: (
   'sm': 540px,
   'md': 768px,
   'lg': 1024px,
-  'xl': 1280px,
+  'xl': 1680px,
   // 'xxl': 1920px,
 ) !default;
 
@@ -37,6 +37,7 @@ $text-color: #000;
 $accent-color: #FF841A;
 $border-color: #bbb;
 $button-border-color: #AFAFAF;
+$button-bg-color: rgb(239 239 239 / 0.3);
 $main-font: 'Inter', 'Noto Sans JP', sans-serif;
 $accent-font: 'Questrial', sans-serif;
 

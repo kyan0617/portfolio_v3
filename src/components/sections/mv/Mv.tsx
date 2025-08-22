@@ -1,6 +1,7 @@
 // import Link from 'next/link';
 import styles from './Mv.module.scss';
 import MvList from "./List";
+import MvImageArea from "./ImageArea";
 
 export default function Mv() {
   return (
@@ -18,6 +19,9 @@ export default function Mv() {
         <div className={styles.body}>
           <MvList />
         </div>
+      </div>
+      <div className={styles.bottom}>
+        <MvImageArea />
       </div>
     </section>
   );

@@ -13,4 +13,8 @@
   color: s.$text-color;
   line-height: 1.5;
   letter-spacing: 0.02em;
+
+  @include s.mq(md) {
+    font-size: 1.4rem;
+  }
 }

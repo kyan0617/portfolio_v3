@@ -1,22 +1,70 @@
 @use "../../../styles/settings" as s;
 
+.subtitleWrapper {
+  display: inline-block;
+  height: fit-content;
+  overflow: hidden;
+}
+
 .subtitle {
   display: block;
+  font-family: var(--font-inter);
   font-size: 1.2rem;
   color: s.$text-color;
   line-height: 1.5;
   letter-spacing: 0.02em;
   margin-bottom: 0.5rem;
+  overflow: hidden;
+  translate: 0 -2rem;
+  transition: translate 0.6s ease;
+
+  @include s.mq(md) {
+    font-size: 1.4rem;
+    margin-bottom: 1.2rem;
+  }
 }
 
-.main {
+.char {
+  display: inline-block;
   font-size: 1.8rem;
   font-weight: 500;
   color: s.$text-color;
   line-height: 1.5;
   letter-spacing: 0.02em;
+  opacity: 0;
+  translate: 0 -2rem;
+  transition: opacity 0.8s ease, translate 0.8s ease;
+
+  @include s.mq(md) {
+    font-size: 2rem;
+  }
+}
+
+.visible {
+  .subtitle {
+    translate: 0 0;
+  }
+
+  .char {
+    opacity: 1;
+    translate: 0 0;
+  }
 }
 
 .center {
   text-align: center;
+}
+
+.centerPc {
+  @include s.mq(md) {
+    text-align: center;
+  }
+}
+
+.centerSp {
+  text-align: center;
+
+  @include s.mq(md) {
+    text-align: left;
+  }
 }

@@ -1,5 +1,13 @@
 import type { Metadata } from "next";
+import { Inter, Noto_Sans_JP, Questrial } from "next/font/google";
 import "./globals.css";
+import "@/styles/reset.css";
+import "@/styles/settings.scss";
+import "@/styles/global.scss";
+
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
+const notoSansJP = Noto_Sans_JP({ subsets: ["latin"], variable: "--font-noto-sans-jp" });
+const questrial = Questrial({ subsets: ["latin"], weight: "400", variable: "--font-questrial" });
 
 export const metadata: Metadata = {
   title: "Haruka Nishida | Web Corder",
@@ -12,7 +20,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="ja" className={`${inter.variable} ${notoSansJP.variable} ${questrial.variable}`}>
       <body>
         {children}
       </body>

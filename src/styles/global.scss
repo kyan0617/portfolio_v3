@@ -1,5 +1,4 @@
 @use "settings" as s;
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans+JP:wght@100..900&family=Questrial&display=swap');
 
 /*----------------------
   初期設定
@@ -8,7 +7,6 @@ html {
   font-size: 10px;
   min-height: 100vh;
   min-height: calc(var(--vh, 1vh) * 100);
-  overflow-x: hidden !important;
   font-size: calc(10 / 375 * 100vw);
 
   @include s.mq(md) {

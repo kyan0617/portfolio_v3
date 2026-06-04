@@ -4,7 +4,7 @@ import styles from './Important.module.scss';
 
 export default function Important() {
   return (
-    <section className={styles.important}>
+    <section id="important" className={styles.important}>
       <div className={styles.inner}>
         <div className={styles.head}>
           <Title subtitle="Important" main="大切にしている事" />

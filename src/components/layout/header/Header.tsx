@@ -7,7 +7,7 @@ import styles from './Header.module.scss';
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
-  
+
   // メニューが開いている時に body のスクロールを無効にする
   useEffect(() => {
     if (menuOpen) {
@@ -15,7 +15,7 @@ export default function Header() {
     } else {
       document.body.style.overflow = '';
     }
-    
+
     return () => {
       document.body.style.overflow = '';
     };
@@ -27,9 +27,10 @@ export default function Header() {
         <h1 className={styles.title}>Haruka.N</h1>
       </div>
       <div className={styles.buttons}>
-        <Link href="/contact" className={styles.contactButton}>
-          <span className={styles.contactText}>
-            Mail
+        <Link href="mailto:hello@ilohalink.com" className={styles.contactButton}>
+          <span className={styles.contactWrapper}>
+            <span className={styles.contactText}>Mail</span>
+            <span className={styles.animationItem} aria-hidden="true"></span>
           </span>
         </Link>
         <button
@@ -49,13 +50,13 @@ export default function Header() {
         <div className={styles.navContent}>
           <ul className={styles.navList}>
             <li className={styles.navItem}>
-              <Link href="" className={styles.navLink}>大切にしていること</Link>
+              <Link href="#important" className={styles.navLink} onClick={() => setMenuOpen(false)}>大切にしていること</Link>
             </li>
             <li className={styles.navItem}>
-              <Link href="" className={styles.navLink}>わたしについて</Link>
+              <Link href="#about" className={styles.navLink} onClick={() => setMenuOpen(false)}>わたしについて</Link>
             </li>
             <li className={styles.navItem}>
-              <Link href="" className={styles.navLink}>制作事例</Link>
+              <Link href="#works" className={styles.navLink} onClick={() => setMenuOpen(false)}>制作事例</Link>
             </li>
           </ul>
         </div>

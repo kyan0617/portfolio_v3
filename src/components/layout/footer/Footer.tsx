@@ -11,13 +11,13 @@ export default function Footer() {
         <div className={styles.menu}>
           <ul className={styles.list}>
             <li className={styles.item}>
-              <Link className={styles.menuLink} href="">大切にしていること</Link>
+              <Link className={styles.menuLink} href="#important">大切にしていること</Link>
             </li>
             <li className={styles.item}>
-              <Link className={styles.menuLink} href="">わたしについて</Link>
+              <Link className={styles.menuLink} href="#about">わたしについて</Link>
             </li>
             <li className={styles.item}>
-              <Link className={styles.menuLink} href="">制作事例</Link>
+              <Link className={styles.menuLink} href="#works">制作事例</Link>
             </li>
           </ul>
         </div>
@@ -27,7 +27,7 @@ export default function Footer() {
           </div>
           <div className={styles.contactMain}>
             <Link className={styles.contactLink} href="mailto:info@ilohalink.com">
-              info@ilohalink.com
+              hello@ilohalink.com
               <Button />
             </Link>
           </div>

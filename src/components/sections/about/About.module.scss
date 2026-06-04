@@ -1,1 +1,142 @@
 @use "../../../styles/settings" as s;
+
+.inner {
+  max-width: 180rem;
+  width: 100%;
+  margin-inline: auto;
+  padding-inline: 2rem;
+  
+  @include s.mq(md) {
+    padding-inline: 4rem;
+  }
+}
+
+.main {
+  padding-block: 9rem 5.8rem;
+  border-bottom: 0.1rem solid s.$border-color;
+  
+  @include s.mq(md) {
+    display: grid;
+    grid-template-columns: 1fr 18.3rem 58.8rem;
+    justify-content: center;
+    gap: 12.4rem;
+    padding-block: 15.2rem 7rem;
+  }
+}
+
+.head {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1.7rem;
+
+  @include s.mq(md) {
+    display: block;
+    margin-bottom: 0;
+  }
+}
+
+.image {
+  width: 16.3rem;
+  height: 23.1rem;
+  border-radius: 0.6rem;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  @include s.mq(md) {
+    width: 18.3rem;
+    height: 23.1rem;
+  }
+}
+
+.details {
+  text-align: center;
+  margin-bottom: 2rem;
+
+  @include s.mq(md) {
+    text-align: left;
+    margin-bottom: 1.5rem;
+  }
+}
+
+.name_en {
+  font-family: var(--font-inter);
+  font-size: 1rem;
+  font-weight: 400;
+  color: s.$text-color;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  margin-bottom: 0.2rem;
+
+  @include s.mq(md) {
+    font-size: 1.2rem;
+  }
+}
+
+.name_ja {
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: s.$text-color;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+
+  @include s.mq(md) {
+    font-size: 2.4rem;
+  }
+}
+
+.text {
+  font-size: 1.4rem;
+  font-weight: 300;
+  color: s.$text-color;
+  line-height: 1.92;
+  letter-spacing: 0.02em;
+  margin-bottom: 4.2rem;
+
+  @include s.mq(md) {
+    margin-bottom: 3rem;
+  }
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 4.2rem;
+}
+
+.label {
+  min-width: 4.4rem;
+  font-size: 1.4rem;
+  font-weight: 300;
+  color: s.$text-color;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+
+  @include s.mq(md) {
+    min-width: 16rem;
+  }
+}
+
+.value {
+  font-size: 1.4rem;
+  font-weight: 300;
+  color: s.$text-color;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+}

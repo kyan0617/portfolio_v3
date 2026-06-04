@@ -23,8 +23,10 @@ $mq-breakpoints: (
 }
 
 @mixin hover {
-  @media (hover:hover) {
-    @content;
+  @media (any-hover: hover) {
+    &:hover {
+      @content;
+    }
   }
 }
 
@@ -38,8 +40,8 @@ $accent-color: #FF841A;
 $border-color: #bbb;
 $button-border-color: #AFAFAF;
 $button-bg-color: rgb(239 239 239 / 0.3);
-$main-font: 'Inter', 'Noto Sans JP', sans-serif;
-$accent-font: 'Questrial', sans-serif;
+$main-font: var(--font-noto-sans-jp), sans-serif;
+$accent-font: var(--font-questrial), sans-serif;
 
 // 背景色関係
 $bg-color: #EBEBE6;

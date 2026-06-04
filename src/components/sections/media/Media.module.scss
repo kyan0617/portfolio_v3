@@ -1,0 +1,16 @@
+@use "../../../styles/settings" as s;
+
+.inner {
+  width: 100%;
+  height: 76.1rem;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  @include s.mq(md) {
+    height: 101.1rem;
+  }
+}

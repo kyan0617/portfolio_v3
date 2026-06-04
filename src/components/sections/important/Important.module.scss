@@ -3,14 +3,14 @@
 .inner {
   max-width: 128rem;
   width: 100%;
-  padding: 10.2rem 2rem 7.9rem;
+  padding: 10.2rem 2rem 7rem;
   margin-inline: auto;
 
   @include s.mq(md) {
     display: grid;
-    grid-template-columns: 16.3rem 1fr;
+    grid-template-columns: 16.5rem 1fr;
     gap: 14.2rem;
-    padding: 18.5rem 14.2rem 11.2rem;
+    padding: 18.5rem 14.2rem 10rem;
   }
 }
 
@@ -19,6 +19,7 @@
 
   @include s.mq(md) {
     margin-bottom: 0;
+    padding-top: 1rem;
   }
 }
 
@@ -48,10 +49,10 @@
   color: s.$text-color;
   line-height: 1.9;
   letter-spacing: 0.04em;
-  margin-bottom: 1.4rem;
+  margin-bottom: 1.2rem;
 
   @include s.mq(md) {
     font-size: 2.4rem;
-    margin-bottom: 2rem;
+    margin-bottom: 2.4rem;
   }
 }

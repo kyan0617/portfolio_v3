@@ -1,0 +1,176 @@
+@use "../../../styles/settings" as s;
+
+.imageAreaWrapper {
+  position: relative;
+}
+
+.buttonMask {
+  width: 5rem;
+  height: 5rem;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  overflow: hidden;
+  z-index: 2;
+
+  @include s.mq(md) {
+    width: 7.8rem;
+    height: 7.8rem;
+    top: 2.7rem;
+  }
+}
+
+.button {
+  width: 100%;
+  height: 100%;
+  border: 0.1rem solid s.$button-border-color;
+  border-radius: 0.6rem;
+  background-color: s.$button-bg-color;
+  padding: 0.37rem;
+  transform: translateY(-110%);
+  transition: transform 0.6s ease;
+  transition-delay: 0.6s;
+
+  @include s.mq(md) {
+    padding: 0.56rem;
+  }
+}
+
+.buttonInner {
+  width: 100%;
+  height: 100%;
+  display: block grid;
+  place-items: center;
+  background-color: s.$accent-color;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  contain: content;
+
+  &::after {
+    content: '';
+    display: grid;
+    width: 0;
+    height: 0;
+    border-radius: calc(infinity * 1px);
+    background-color: #FF7900;
+    position: absolute;
+  }
+
+  img {
+    width: 1.08rem;
+    height: 0.688rem;
+    object-fit: contain;
+    position: relative;
+    z-index: 1;
+  }
+
+  @media (any-hover: hover) {
+    &:hover{
+      &::after {
+        animation: buttonHoverBg 1s ease forwards;
+      }
+      img {
+        animation: buttonHoverArrow 1s ease forwards;
+      }
+    }
+  }
+
+  @include s.mq(md) {
+    img {
+      width: 1.6rem;
+      height: 1.6rem;
+    }
+  }
+}
+
+.image {
+  width: 100%;
+  height: 59.2rem;
+  position: relative;
+  overflow: hidden;
+  opacity: 0;
+
+  &::before {
+    width: 150vw;
+    height: 8rem;
+    content: "";
+    position: absolute;
+    top: -4.8rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: s.$bg-color;
+    border-radius: 50%;
+    z-index: 1;
+  }
+
+  @include s.mq(md) {
+    height: 62.4rem;
+    
+    &::before {
+      height: 57rem;
+      top: -49.6rem;
+    }
+  }
+}
+
+.imageInner {
+  position: relative;
+  width: 100%;
+  height: 120%;
+
+  img {
+    display: block;
+    width: 100%;
+    height: 120% !important;
+    object-fit: cover;
+  }
+}
+
+.visible {
+  .button {
+    transform: translateY(0);
+  }
+  .image {
+    animation: imageEntrance 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    animation-delay: 0.4s;
+  }
+}
+
+@keyframes buttonHoverBg {
+  from {
+    width: 0;
+    height: 0;
+  }
+  to {
+    opacity: 0;
+    width: 180%;
+    height: 180%;
+  }
+}
+
+@keyframes buttonHoverArrow {
+  0% {
+    translate: 0 0;
+  }
+  20% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+    translate: 0 2rem;
+  }
+  51% {
+    opacity: 0;
+    translate: 0 -2rem;
+  }
+  100% {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+
+@keyframes imageEntrance {
+  0%   { opacity: 0; transform: translateY(4rem); }
+  100% { opacity: 1; transform: translateY(0); }
+}

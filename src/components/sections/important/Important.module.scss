@@ -1,0 +1,58 @@
+@use "../../../styles/settings" as s;
+
+.inner {
+  max-width: 128rem;
+  width: 100%;
+  padding: 10.2rem 2rem 7rem;
+  margin-inline: auto;
+
+  @include s.mq(md) {
+    display: grid;
+    grid-template-columns: 16.5rem 1fr;
+    gap: 14.2rem;
+    padding: 18.5rem 14.2rem 10rem;
+  }
+}
+
+.head {
+  margin-bottom: 3rem;
+
+  @include s.mq(md) {
+    margin-bottom: 0;
+    padding-top: 1rem;
+  }
+}
+
+.slogan {
+  font-size: 2.8rem;
+  font-weight: 300;
+  color: s.$text-color;
+  line-height: 1.55;
+  letter-spacing: 0.04em;
+  margin-bottom: 3.7rem;
+
+  .accent {
+    display: block;
+    color: s.$accent-color;
+  }
+
+  @include s.mq(md) {
+    font-size: 4.4rem;
+    margin-bottom: 3.8rem;
+  }
+}
+
+.text {
+  display: block;
+  font-size: 1.8rem;
+  font-weight: 300;
+  color: s.$text-color;
+  line-height: 1.9;
+  letter-spacing: 0.04em;
+  margin-bottom: 1.2rem;
+
+  @include s.mq(md) {
+    font-size: 2.4rem;
+    margin-bottom: 2.4rem;
+  }
+}

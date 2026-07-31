@@ -1,0 +1,53 @@
+@use "sass:map";
+
+/*----------------------
+  ブレイクポイント設定
+-------------------------*/
+$mq-breakpoints: (
+  'xs': 321px,
+  'sm': 540px,
+  'md': 768px,
+  'lg': 1024px,
+  'xl': 1680px,
+  // 'xxl': 1920px,
+) !default;
+
+@mixin mq($breakpoint: md, $rule: min) {
+  $breakpoint: map.get($mq-breakpoints, $breakpoint);
+  @if $rule == max {
+    $breakpoint: $breakpoint - 1px;
+  }
+  @media screen and (#{$rule}-width: $breakpoint) {
+    @content;
+  }
+}
+
+@mixin hover {
+  @media (any-hover: hover) {
+    &:hover {
+      @content;
+    }
+  }
+}
+
+/*---------
+  変数設定
+---------*/
+// 色の指定
+$main-color: #000;
+$text-color: #000;
+$accent-color: #FF841A;
+$border-color: #bbb;
+$button-border-color: #AFAFAF;
+$button-bg-color: rgb(239 239 239 / 0.3);
+$main-font: var(--font-noto-sans-jp), sans-serif;
+$accent-font: var(--font-questrial), sans-serif;
+
+// 背景色関係
+$bg-color: #EBEBE6;
+
+// inner幅
+$inner-width: 120rem;
+
+// letter-spacing
+$ls: 0.12em;

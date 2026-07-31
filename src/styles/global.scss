@@ -1,0 +1,58 @@
+@use "settings" as s;
+
+/*----------------------
+  初期設定
+-------------------------*/
+html {
+  font-size: 10px;
+  min-height: 100vh;
+  min-height: calc(var(--vh, 1vh) * 100);
+  font-size: calc(10 / 375 * 100vw);
+
+  @include s.mq(md) {
+    font-size: calc(10 / 1280 * 100vw);
+  }
+
+  @include s.mq(xl) {
+    font-size: 12.3px;
+  }
+}
+
+body {
+  max-width: 2700px;
+  min-height: 100vh;
+  min-height: calc(var(--vh, 1vh) * 100);
+  background-color: #fff;
+  font-family: s.$main-font;
+  font-weight: 400;
+  font-size: 1.6rem;
+  color: s.$text-color;
+  letter-spacing: 0;
+  line-height: 1.5;
+  background-color: s.$bg-color;
+  position: relative;
+  overscroll-behavior: none;
+  margin: auto;
+}
+
+main {
+  min-height: 50vh;
+}
+
+._inner {
+  max-width: s.$inner-width;
+  width: 100%;
+  margin-inline: auto;
+}
+
+.visuallyHidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  margin: -1px !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  clip: rect(0 0 0 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}

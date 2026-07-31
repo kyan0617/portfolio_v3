@@ -8,6 +8,9 @@
   width: 100%;
   padding: 3.2rem 2rem;
   margin-inline: auto;
+  opacity: 0;
+  animation: fadeIn 1.2s ease forwards;
+  animation-delay: 3.2s;
 
   @include s.mq(md) {
     padding: 3.2rem 4rem;
@@ -275,4 +278,8 @@
   @include s.mq(md) {
     font-size: 3.2rem;
   }
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; }
 }

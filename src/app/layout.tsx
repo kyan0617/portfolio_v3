@@ -4,6 +4,7 @@ import "./globals.css";
 import "@/styles/reset.css";
 import "@/styles/settings.scss";
 import "@/styles/global.scss";
+import SmoothScroll from "@/components/layout/SmoothScroll/SmoothScroll";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const notoSansJP = Noto_Sans_JP({ subsets: ["latin"], variable: "--font-noto-sans-jp" });
@@ -22,6 +23,7 @@ export default function RootLayout({
   return (
     <html lang="ja" className={`${inter.variable} ${notoSansJP.variable} ${questrial.variable}`}>
       <body>
+        <SmoothScroll />
         {children}
       </body>
     </html>

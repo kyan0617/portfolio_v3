@@ -11,6 +11,8 @@ export type Cases = {
     height: number;
   };
   url?: string;
+  agency?: string;
+  agencyLink?: string;
 }
 
 export const client = createClient({

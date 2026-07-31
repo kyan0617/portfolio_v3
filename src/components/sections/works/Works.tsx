@@ -36,6 +36,12 @@ export default async function Works() {
                     </div>
                   </div>
                 </a>
+                {item.agency && item.agencyLink && (
+                  <a href={item.agencyLink} className={styles.agencyLink} target="_blank">
+                    <span className={styles.agencyLabel}>Agency: </span>
+                    <span className={styles.agencyName}>{item.agency}</span>
+                  </a>
+                )}
               </li>
             ))}
           </ul>

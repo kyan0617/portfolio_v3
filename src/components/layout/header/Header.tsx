@@ -14,20 +14,25 @@ export default function Header() {
     setMenuOpen(false);
     const lenis = getLenis();
     if (lenis) {
+      lenis.start();
       lenis.scrollTo(href);
     }
   };
 
   // メニューが開いている時に body のスクロールを無効にする
   useEffect(() => {
+    const lenis = getLenis();
     if (menuOpen) {
       document.body.style.overflow = 'hidden';
+      lenis?.stop();
     } else {
       document.body.style.overflow = '';
+      lenis?.start();
     }
 
     return () => {
       document.body.style.overflow = '';
+      lenis?.start();
     };
   }, [menuOpen]);
 

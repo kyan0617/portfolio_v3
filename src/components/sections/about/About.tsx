@@ -13,7 +13,7 @@ export default function About() {
           </div>
           <div className={styles.profile}>
             <div className={styles.image}>
-              <Image src="/about_image.png" alt="わたしについて" width={183} height={231} />
+              <Image src="/about_image.png" alt="わたしについて" fill sizes="(min-width: 768px) 183px, 163px" style={{ objectFit: 'cover' }} />
             </div>
           </div>
           <div className={styles.content}>

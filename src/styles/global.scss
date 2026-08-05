@@ -52,3 +52,9 @@ main {
   white-space: nowrap !important;
   border: 0 !important;
 }
+
+::selection {
+  background-color: #FF841A;
+  color: #fff;
+}
+

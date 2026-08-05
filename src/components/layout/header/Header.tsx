@@ -20,14 +20,18 @@ export default function Header() {
 
   // メニューが開いている時に body のスクロールを無効にする
   useEffect(() => {
+    const lenis = getLenis();
     if (menuOpen) {
       document.body.style.overflow = 'hidden';
+      lenis?.stop();
     } else {
       document.body.style.overflow = '';
+      lenis?.start();
     }
 
     return () => {
       document.body.style.overflow = '';
+      lenis?.start();
     };
   }, [menuOpen]);
 

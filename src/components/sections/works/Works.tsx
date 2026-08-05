@@ -22,7 +22,7 @@ export default async function Works() {
               <li key={item.id} className={styles.item}>
                 <a href={item.url} className={styles.link} target="_blank">
                   <div className={styles.image}>
-                    <Image src={item.thumbnail.url} alt={`${item.title}のイメージ画像です。`} width={590} height={332} />
+                    <Image src={item.thumbnail.url} alt={`${item.title}のイメージ画像です。`} fill sizes="(min-width: 768px) 50vw, 100vw" style={{ objectFit: 'cover' }} />
                   </div>
                   <div className={styles.content}>
                     <div className={styles.details}>

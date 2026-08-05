@@ -56,12 +56,6 @@
   opacity: 0;
 }
 
-.list {
-  @include s.mq(md) {
-    padding-bottom: 4.8rem;
-  }
-}
-
 .item {
   border-bottom: 0.1rem solid s.$border-color;
 }

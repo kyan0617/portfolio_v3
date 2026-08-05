@@ -4,9 +4,19 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import styles from './Header.module.scss';
+import { getLenis } from '@/lib/lenisInstance';
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    setMenuOpen(false);
+    const lenis = getLenis();
+    if (lenis) {
+      lenis.scrollTo(href);
+    }
+  };
 
   // メニューが開いている時に body のスクロールを無効にする
   useEffect(() => {
@@ -50,13 +60,13 @@ export default function Header() {
         <div className={styles.navContent}>
           <ul className={styles.navList}>
             <li className={styles.navItem}>
-              <Link href="#important" className={styles.navLink} onClick={() => setMenuOpen(false)}>大切にしていること</Link>
+              <Link href="#important" className={styles.navLink} onClick={(e) => handleNavClick(e, '#important')}>大切にしていること</Link>
             </li>
             <li className={styles.navItem}>
-              <Link href="#about" className={styles.navLink} onClick={() => setMenuOpen(false)}>わたしについて</Link>
+              <Link href="#about" className={styles.navLink} onClick={(e) => handleNavClick(e, '#about')}>わたしについて</Link>
             </li>
             <li className={styles.navItem}>
-              <Link href="#works" className={styles.navLink} onClick={() => setMenuOpen(false)}>制作事例</Link>
+              <Link href="#works" className={styles.navLink} onClick={(e) => handleNavClick(e, '#works')}>制作事例</Link>
             </li>
           </ul>
         </div>

@@ -37,6 +37,8 @@ export default function MvImageArea({ isReady}: Props) {
             src="/mv_image.jpg"
             alt=""
             fill
+            priority
+            sizes="100vw"
           />
         </div>
       </div>

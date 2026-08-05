@@ -14,6 +14,7 @@ export default function Header() {
     setMenuOpen(false);
     const lenis = getLenis();
     if (lenis) {
+      lenis.start();
       lenis.scrollTo(href);
     }
   };

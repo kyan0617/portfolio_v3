@@ -1,23 +1,32 @@
 "use client"
 
+import { getLenis } from '@/lib/lenisInstance';
 import Link from 'next/link';
 import styles from './Footer.module.scss';
 import Button from '@/components/ui/button/Button';
 
 export default function Footer() {
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    const lenis = getLenis();
+    if (lenis) {
+      lenis.scrollTo(href);
+    }
+  };
+
   return (
     <footer className={styles.footer}>
       <div className={styles.inner}>
         <div className={styles.menu}>
           <ul className={styles.list}>
             <li className={styles.item}>
-              <Link className={styles.menuLink} href="#important">大切にしていること</Link>
+              <Link className={styles.menuLink} href="#important" onClick={(e) => handleNavClick(e, '#important')}>大切にしていること</Link>
             </li>
             <li className={styles.item}>
-              <Link className={styles.menuLink} href="#about">わたしについて</Link>
+              <Link className={styles.menuLink} href="#about" onClick={(e) => handleNavClick(e, '#about')}>わたしについて</Link>
             </li>
             <li className={styles.item}>
-              <Link className={styles.menuLink} href="#works">制作事例</Link>
+              <Link className={styles.menuLink} href="#works" onClick={(e) => handleNavClick(e, '#works')}>制作事例</Link>
             </li>
           </ul>
         </div>
@@ -26,7 +35,7 @@ export default function Footer() {
             <span className={styles.contactTitle}>お問い合わせ</span>
           </div>
           <div className={styles.contactMain}>
-            <Link className={styles.contactLink} href="mailto:info@ilohalink.com">
+            <Link className={styles.contactLink} href="mailto:hello@ilohalink.com">
               hello@ilohalink.com
               <Button />
             </Link>
@@ -38,7 +47,7 @@ export default function Footer() {
           </p>
         </div>
         <div className={styles.copyright}>
-          <small className={styles.copyrightText}>&copy;2025 Nishida Haruka</small>
+          <small className={styles.copyrightText}>&copy;2026 Nishida Haruka</small>
         </div>
       </div>
     </footer>

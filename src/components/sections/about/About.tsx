@@ -28,7 +28,7 @@ export default function About() {
               <br />
               また、Nuxt.jsやNext.jsなどのフレームワークを用いたWEBアプリのフロント実装も担当しております。
               <br />
-              現在は、フロントエンド領域のスキルをさらに強化すべく、学習を続けています。
+              現在は、フロントエンド領域のスキルをさらに強化し、実務で活かせる技術の幅を広げるため、Astroなどの技術習得にも取り組んでいます。
             </p>
             <ul className={styles.list}>
               <li className={styles.item}>

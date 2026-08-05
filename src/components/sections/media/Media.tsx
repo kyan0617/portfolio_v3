@@ -13,15 +13,14 @@ export default function Media() {
     <section className={styles.media}>
       <div className={styles.inner}>
         <div ref={parallaxRef} className={styles.image}>
-          <picture>
-            <source srcSet="/media_image_pc.jpg" media="(min-width: 769px)" />
-            <Image
-              src="/media_image_sp.jpg"
-              alt=""
-              fill
-              style={{ objectFit: 'cover' }}
-            />
-          </picture>
+          <Image
+            src="/media_image.jpg"
+            alt=""
+            fill
+            priority
+            sizes="100vw"
+            style={{ objectFit: 'cover' }}
+          />
         </div>
       </div>
     </section>
